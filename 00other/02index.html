@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // let message = {
+        //     body: {
+        //         user: {
+        //             firstname: "张"
+        //         }
+        //     }
+        // }
+
+        // console.log(message.body.user.firstname);
+        // if(message && message.body && message.body.user && message.body.user.firstname) {
+        //     console.log(message.body.user.firstname);
+        // }
+        // if(message?.body?.user?.firstname) {
+        //     console.log(message.body.user.firstname);
+
+        // }
+
+        // let myinput = document.querySelector("input");
+        // console.log(myinput ? myinput.value : undefined);
+
+        let m = undefined;
+        console.log(delete m); //false
+        console.log(delete undefined); //false
+
+        // 有一个隐式引用来指向结果为undefined的表达式，删除这个表达式值为true
+        let a = undefined;
+        console.log(delete a?.b); //true
+
+        function fn() { }
+        console.log(delete fn()); //true
+
+        let c = fn();
+        console.log(delete c); // false
+    </script>
+
+
+</body>
+</html>

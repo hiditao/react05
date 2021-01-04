@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 目标 = 源
+        // 对象解构
+        let {name, sex} = {name: "小明", sex: "男", age: 18, id: 1};
+        console.log(name, sex);
+
+        // 形参作为解构的目标， 实参作为解构的源
+        function fn({a, b}) {
+            console.log(a, b);
+        }
+        fn({a: 100, b: 200})
+
+        function fn2() {
+            return {name: "aaa", age: 18};
+        }
+        // 自己定义的变量作为解构的目标，返回的数据作为解构的源
+        let {age} = fn2();
+        console.log(age);
+
+        // const {app, ctx} = this;  //egg中的解构
+
+
+        // 数组解构
+        let [a, b, c] = [11, 22, 33];
+        console.log(a, b, c);
+
+        // 实参作为解构的源， 形参作为目标
+        function fm([m, n]) {
+            console.log(m, n);
+        }
+        fm([1,2,3,4,5])
+
+        function fm1(){
+            return [10, function(){}]
+        }
+        let [i, j] = fm1();
+        console.log(i, j);
+
+
+    </script>
+</body>
+</html>
